@@ -18,7 +18,7 @@ export async function apiGetResults() {
   });
 
   result.forEach((city) => {
-    city.results.sort((a, b) => a.votes - b.votes);
+    city.results.sort((a, b) => b.votes - a.votes);
     city.results = city.results.map((resp) => {
       const candidate = candidates.data.filter(
         (f) => f.id === resp.candidateId
